@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/logofinal.png">
+
+    <style>
+        body {
+            opacity: 0;
+            animation: fadeIn 2.5s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <title>about me.</title>
+</head>
+
+<body>
+    <%- include('partials/header', { activePage: 'about' }) %>
+    <%- include('partials/videobg') %>
+
+
+    <div class="about">
+        about me.
+    </div>
+
+    <div class="aboutpara">
+        hi, i’m shayne nathaniel, a year 2 ui/ux <br>design student at republic<br>polytechnic.
+        i’ve always been<br>passionate about creativity since<br>young, using it as a way to express<br> myself and my thoughts.<br><br>
+
+         for my ui design, i work mainly with<br> adobe photoshop and illustrator, alongside <br>apps like figma and canva, always looking<br>for new ways
+        to blend style with<br>purpose.<br><br>
+
+        outside of design, i love boxing and<br>cooking,
+        they keep me sharp,<br>focused, and inspired.
+    </div>
+</body>
+</html>
