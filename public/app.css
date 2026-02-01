@@ -266,3 +266,99 @@ body {
     font-family: 'Special Gothic Expanded One', Arial, sans-serif;
     color: rgb(255, 38, 0);
 }
+
+/* --- MOBILE RESPONSIVENESS --- */
+/* This activates ONLY on screens smaller than 768px (Tablets & Phones) */
+@media (max-width: 768px) {
+    
+    /* 1. Shrink the Giant Header */
+    .portheader {
+        font-size: 32px; /* Down from 60px */
+        margin-bottom: 20px;
+    }
+
+    /* 2. Make the Container padding smaller */
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    /* 3. Make Cards fill the screen instead of being fixed */
+    .project-card {
+        width: 90%;       /* Takes up 90% of the phone width */
+        max-width: 320px; /* Stops it from getting too huge */
+        margin-bottom: 10px;
+    }
+
+    /* 4. Fix the Rows */
+    .work-row {
+        gap: 15px;       /* Smaller gap between cards */
+        padding: 15px;   /* Less padding inside the colored row */
+        border-radius: 15px; /* Slightly less round corners */
+    }
+
+    /* 5. Shrink Row Titles */
+    .rowtitles {
+        font-size: 20px;
+    }
+
+    /* Additional overrides to prevent squishing on very small phones */
+    h2 {
+        font-size: 28px; /* much smaller on phones */
+        margin-left: 0 !important;
+        margin-top: 20px;
+        text-align: center;
+        line-height: 1.1;
+    }
+
+    h2 .logo {
+        height: 80px !important; /* override large inline height */
+        display: block;
+        margin: 10px auto 0 auto !important;
+        vertical-align: middle;
+    }
+
+    h3 {
+        font-size: 16px;
+        margin-left: 0 !important;
+        margin-top: 8px;
+        text-align: center;
+    }
+
+    /* Navbar: stack items vertically on small screens */
+    .navbar .container {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .navbar-nav {
+        flex-direction: column !important;
+        width: 100%;
+        align-items: center;
+        margin: 0;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 6px 0 !important;
+    }
+
+    /* Fix elements with large fixed margins or offsets */
+    .text-center, .about, .aboutpara, .contactme, h4 {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 0 12px;
+        text-align: center;
+    }
+
+    /* Ensure images and videos are fluid */
+    img, video {
+        max-width: 100%;
+        height: auto !important;
+    }
+
+    /* Reduce project card size further on very narrow devices */
+    .project-card {
+        width: 95%;
+        max-width: 380px;
+    }
+}
