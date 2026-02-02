@@ -26,6 +26,49 @@ app.get('/portfolio', (req, res) => {
     res.render('portfolio', { activePage: 'portfolio' });
 });
 
+
+
+//react projects
+app.get('/pizzaco', (req, res) => {
+    res.render('pizzaco', { activePage: 'portfolio' });
+});
+
+app.get('/travellist', (req, res) => {
+    res.render('travellist');
+});
+
+app.get('/tasklist', (req, res) => {
+    res.render('tasklist');
+});
+
+
+
+//immersive tech projects
+app.get('/namecard', (req, res) => {
+    res.render('namecard');
+});
+
+app.get('/escaperoom', (req, res) => {
+    res.render('escaperoom');
+});
+
+
+
+//uiux projects
+app.get('/ecofashion', (req, res) => {
+    res.render('ecofashion');
+});
+
+app.get('/learnrp', (req, res) => {
+    res.render('learnrp');
+});
+
+app.get('/moodmatch', (req, res) => {
+    res.render('moodmatch');
+});
+
+
+
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });
