@@ -69,6 +69,21 @@ app.get('/moodmatch', (req, res) => {
 
 
 
+//graphic design projects
+app.get('/travelly', (req, res) => {
+    res.render('travelly');
+});
+
+app.get('/character', (req, res) => {
+    res.render('character');
+});
+
+app.get('/typo', (req, res) => {
+    res.render('typo');
+});
+
+
+
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });
