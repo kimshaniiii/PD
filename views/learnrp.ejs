@@ -11,14 +11,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="/logofinal.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <title>Learn@RP</title>
 
   <style>
+        html {
+            overflow: hidden;
+        }
         body {
             opacity: 0;
             animation: fadeIn 2.5s forwards;
             margin: 0;
             padding: 0;
+            padding-top: 80px;
+        }
+        [data-scroll-container] {
+            perspective: 1px;
         }
 
         .project-title {
@@ -126,11 +135,11 @@
     </style>
 
 </head>
-<body>
+<body data-scroll-container>
     <%- include('partials/header', { activePage: 'portfolio' }) %>
     <%- include('partials/videobg') %>
 
-    <div class="container-fluid">
+    <div class="container-fluid" data-scroll-section>
         <h1 class="project-title">learn@rp</h1>
         
         <div class="project-description">
@@ -151,6 +160,21 @@
             <a href="/portfolio" class="btn btn-outline-light">back to portfolio</a>
         </div>
     </div>
+
+    <script>
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('[data-scroll-container]'),
+            smooth: true,
+            smoothMobile: true,
+            multiplier: 1.2,
+            lerp: 0.075,
+            reloadOnContextChange: true
+        });
+
+        window.addEventListener('resize', () => {
+            scroll.update();
+        });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
