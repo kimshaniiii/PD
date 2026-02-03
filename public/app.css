@@ -157,6 +157,15 @@ h4{
     text-align: center;
 }
 
+@keyframes floatUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
 .card {
     margin-top: 25px;
     background-color: #00000029; 
@@ -165,6 +174,19 @@ h4{
     padding: 15px;
     font-family: 'Special Gothic Expanded One', Arial, sans-serif; 
     transition: all 0.4s ease;
+    animation: floatUpDown 3s ease-in-out infinite;
+}
+
+.col-md-4:nth-child(1) .card {
+    animation-delay: 0s;
+}
+
+.col-md-4:nth-child(2) .card {
+    animation-delay: 0.5s;
+}
+
+.col-md-4:nth-child(3) .card {
+    animation-delay: 1s;
 }
 
 .card:hover {
@@ -172,6 +194,7 @@ h4{
     text-shadow: 0 0 15px rgba(255, 59, 48, 0.9);
     cursor: pointer;
     transform: translateY(-5px);
+    animation-play-state: paused;
 }
 
 .card-title {
