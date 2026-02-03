@@ -11,28 +11,88 @@
   <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="/logofinal.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <title id="contactme">my portfolio.</title>
 
   <style>
+        html {
+            overflow: hidden;
+        }
         body {
             opacity: 0;
             animation: fadeIn 2.5s forwards;
             margin: 0;
             padding: 0;
         }
+        [data-scroll-container] {
+            perspective: 1px;
+        }
+        .video-bg-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .video-bg-fixed video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: cover;
+            opacity: 12%;
+        }
+        .portheader {
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+        }
+        .work-row {
+            padding: 30px 20px;
+            transition: all 0.3s ease;
+        }
+        .bottom-message {
+            text-align: center;
+            margin-top: 80px;
+            margin-bottom: 50px;
+            padding: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        .bottom-message p {
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: 0;
+            font-family: 'Special Gothic Expanded One', Arial, sans-serif;
+            margin: 0;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
     </style>
 
 </head>
-<body>
+<body data-scroll-container>
     <%- include('partials/header', { activePage: 'portfolio' }) %>
-    <%- include('partials/videobg') %>
+    
+    <div class="video-bg-fixed">
+        <video autoplay muted loop playsinline>
+            <source src="/background.mp4" type="video/mp4" />
+        </video>
+    </div>
 
-    <div class="container mt-5">   
-        <h1 class="portheader">some of my work.</h1>
+    <div class="container" style="padding-top: 150px;" data-scroll-section>   
+        <h1 class="portheader" data-scroll data-scroll-speed="1">some of my work.</h1>
 
         <div class="work-container">
-            <p1 class = "rowtitles">react.</p1>
-            <section class="work-row row-1">
+            <p1 class = "rowtitles" data-scroll data-scroll-speed="0.8">react.</p1>
+            <section class="work-row row-1" data-scroll data-scroll-speed="0.9">
                 
                 <a href="/pizzaco" class="project-card" style="background-image: url('/pizzaco.png');">
                     <div class="card-content">
@@ -55,8 +115,8 @@
             </section>
             
 
-            <p1 class = "rowtitles">immersive technologies.</p1>
-            <section class="work-row row-2">
+            <p1 class = "rowtitles" data-scroll data-scroll-speed="0.8">immersive technologies.</p1>
+            <section class="work-row row-2" data-scroll data-scroll-speed="0.9">
                 <a href="/namecard" class="project-card" style="background-image: url('/namecard.png');";">
                     <div class="card-content">
                         <p id = "projectnames">ar namecard</p>
@@ -70,8 +130,8 @@
                 </a>
             </section>
             
-            <p1 class = "rowtitles">ui/ux design.</p1>
-            <section class="work-row row-3">
+            <p1 class = "rowtitles" data-scroll data-scroll-speed="0.8">ui/ux design.</p1>
+            <section class="work-row row-3" data-scroll data-scroll-speed="0.9">
                 <a href="/ecofashion" class="project-card" style="background-image: url('/ecofashion.png')">
                     <div class="card-content">
                         <p id = "projectnames">eco fashion web design</p>
@@ -89,8 +149,8 @@
                 </a>
             </section>
             
-            <p1 class = "rowtitles">graphic design.</p1>
-            <section class="work-row row-4">
+            <p1 class = "rowtitles" data-scroll data-scroll-speed="0.8">graphic design.</p1>
+            <section class="work-row row-4" data-scroll data-scroll-speed="0.9">
                 <a href="/travelly" class="project-card" style="background-image: url('/travelly.png')">
                     <div class="card-content">
                         <p id = "projectnames">travelly ad</p>
@@ -101,19 +161,34 @@
                         <p id = "projectnames">character design</p>
                     </div>
                 </a>
-                <a href="/typo" class="project-card" style="background-image: url('/typo-placeholder.png')">
+                <a href="/typo" class="project-card" style="background-image: url('/typo.png')">
                     <div class="card-content">
                         <p id = "projectnames">typography art</p>
                     </div>
                 </a>
             </section>
-            
-            <p1 class = "rowtitles">certificates.</p1>
-            <section class="work-row row-5">
-                <h2>Project 5</h2>
-            </section>
+        </div>
+
+        <div class="bottom-message" data-scroll data-scroll-speed="0.5">
+            <p>you have reached the bottom</p>
         </div>
     </div>
+  </div>
+
+  <script>
+    const scroll = new LocomotiveScroll({
+        el: document.querySelector('[data-scroll-container]'),
+        smooth: true,
+        smoothMobile: true,
+        multiplier: 1.2,
+        lerp: 0.075,
+        reloadOnContextChange: true
+    });
+
+    window.addEventListener('resize', () => {
+        scroll.update();
+    });
+  </script>
 
 </body>
 </html>

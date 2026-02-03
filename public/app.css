@@ -1,5 +1,41 @@
+* {
+    scroll-behavior: smooth;
+}
+
 .navbar {
     border-bottom: 0.5px solid rgb(88, 88, 88);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.logo-link {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.logo-link:hover {
+    transform: translateY(-3px);
+    filter: drop-shadow(0 5px 15px rgba(255, 0, 0, 0.5));
+}
+
+.navbar-logo-link {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.navbar-logo-link:hover {
+    transform: translateY(-3px);
+    filter: drop-shadow(0 5px 15px rgba(255, 0, 0, 0.5));
+}
+
+.navbar-logo-link:hover .logo {
+    transform: scale(1.05);
 }
 
 .btn-outline-light {
@@ -8,15 +44,17 @@
     border-width: 2.5px;
     color: #ff0000;
     font-weight: 800;
-    transition: background 0.4s, color 0.4s;
+    transition: all 0.4s ease;
 }
 
 .btn-outline-light.active,
 .btn-outline-light:focus,
 .btn-outline-light:hover {
-    background-color: red ;
+    background-color: red;
     color: black;
-    border-color: #ff0000 ;
+    border-color: #ff0000;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
 }
 
 body {
@@ -32,6 +70,7 @@ h2 {
     font-weight: 900;
     letter-spacing: 4px;
     font-family: 'Special Gothic Expanded One', Arial, sans-serif;
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
 }
 
 h3 {
@@ -42,6 +81,7 @@ h3 {
     font-weight: 900;
     letter-spacing: 1.5px;
     font-family: 'Special Gothic Expanded One', Arial, sans-serif;
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.15);
 }
 
 .video-background {
@@ -92,7 +132,7 @@ h4{
 .about{
     text-align: left;
     font-size: 60px;
-    margin-top: 30%;
+
     margin-left: 10%;
     font-weight: 900;
     letter-spacing: 4px;
@@ -102,7 +142,7 @@ h4{
 .aboutpara {
     text-align: center;
     font-size: 20px;
-    margin-top: -400px;
+    margin-top: -480px;
     margin-left: 50%;
     font-weight: 900;
     letter-spacing: 1px;
@@ -124,14 +164,14 @@ h4{
     color: #ff0000;
     padding: 15px;
     font-family: 'Special Gothic Expanded One', Arial, sans-serif; 
-    transition: all 0.3s ease; 
-    
+    transition: all 0.4s ease;
 }
 
 .card:hover {
     color: #ffc7c7 !important;
-    text-shadow: 0 0 12px rgba(255, 59, 48, 0.8);
+    text-shadow: 0 0 15px rgba(255, 59, 48, 0.9);
     cursor: pointer;
+    transform: translateY(-5px);
 }
 
 .card-title {
@@ -146,8 +186,15 @@ h4{
 .social-circle {
     font-size: 35px;
     color: #ff0000;
+    display: inline-block;
+    transition: all 0.4s ease;
 }
 
+.social-circle:hover {
+    color: #ff0000;
+    transform: rotate(15deg) scale(1.2);
+    filter: drop-shadow(0 5px 20px rgba(255, 0, 0, 0.6));
+}
 
 .portheader {
     font-size: 60px;
@@ -181,22 +228,24 @@ h4{
     border-radius: 10px;
     text-decoration: none;
     color: black;
-    transition: transform 0.3s ease;
+    transition: all 0.4s ease;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .project-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) translateY(-5px);
     cursor: pointer;
+    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
 }
 
 .card-content {
     width: 100%;
     height: 100%;
     background-color: rgb(0, 0, 0);
-    transition: background-color 0.3s ease;
+    transition: all 0.4s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -205,7 +254,7 @@ h4{
 }
 
 .project-card:hover .card-content {
-    background-color: rgba(0, 0, 0, 0.445);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .card-content h3 {
@@ -236,6 +285,10 @@ h4{
     gap: 30px;
     flex-wrap: wrap;
     font-family: 'Special Gothic Expanded One', sans-serif;
+    padding: 30px 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 body {
@@ -257,6 +310,9 @@ body {
     font-weight: 900;
     letter-spacing: 1px;
     font-family: 'Special Gothic Expanded One', Arial, sans-serif;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+    display: block;
+    margin-bottom: 15px;
 }
 
 #projectnames {

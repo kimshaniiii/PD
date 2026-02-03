@@ -21,6 +21,38 @@
                 opacity: 1;
             }
         }
+        .logo {
+            transition: transform 0.3s ease, filter 0.3s ease;
+            filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.3));
+        }
+        .logo:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.6));
+        }
+        h3 {
+            animation: slideUp 1s ease 0.5s forwards;
+            opacity: 0;
+        }
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                transform: translateY(20px);
+            }
+        }
+        .subtext {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            font-family: 'Special Gothic Expanded One', Arial, sans-serif;
+            opacity: 0.7;
+            animation: slideUp 1s ease 0.8s forwards;
+            opacity: 0;
+        }
     </style>
 
   <title>shayne's portfolio</title>
@@ -28,11 +60,12 @@
 <body>
   <%- include('partials/header', { activePage: 'home' }) %>
   
-  <main  id = "home">
+  <main id="home" style="padding-top: 120px;">
 
     <div id = "homepage">
       <h2>hi, i'm<img src="logofinal.png" alt="Logo" class="logo" style="height: 350px; "></h2>
       <h3>an aspiring ui/ux designer from republic<br>polytechnic with a lifelong passion for design.</h3>
+      <p class="subtext">mapping digital experiences through precision and depth. explore the work.</p>
       <div class="video-background">
         <%- include('partials/videobg') %>
       </div>

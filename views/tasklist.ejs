@@ -29,6 +29,19 @@
             text-align: left;
             margin-top: 30px;
             margin-left: 10%;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+            animation: slideInLeft 0.8s ease;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         .project-description {
@@ -41,18 +54,38 @@
             margin-top: 30px;
             max-width: 80%;
             line-height: 1.6;
+            animation: fadeInUp 1s ease 0.3s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .project-video {
             margin-top: 40px;
             margin-left: 10%;
             max-width: 80%;
+            animation: fadeInUp 1s ease 0.5s backwards;
         }
 
         .project-video video {
             width: 100%;
             border-radius: 10px;
             border: 2px solid #ff0000;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .project-video video:hover {
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
+            transform: scale(1.01);
         }
 
         .project-image {
@@ -62,12 +95,26 @@
             max-width: 80%;
             border-radius: 10px;
             display: block;
+            animation: fadeInUp 1s ease 0.7s backwards;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
         }
 
         .back-button {
             margin-top: 50px;
             margin-left: 10%;
             margin-bottom: 50px;
+            animation: fadeIn 1s ease 0.9s backwards;
+        }
+
+        .btn-outline-light:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
         }
     </style>
 
@@ -88,12 +135,10 @@
         <div class="project-video">
             <!-- Replace 'your-video-file.mp4' with your actual video file path -->
             <video controls>
-                <source src="/your-video-file.mp4" type="video/mp4">
+                <source src="/taskifyshowcase.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
-
-        <img src="/tasklist.png" alt="Mobile Task List App project" class="project-image">
 
         <div class="back-button">
             <a href="/portfolio" class="btn btn-outline-light">back to portfolio</a>
