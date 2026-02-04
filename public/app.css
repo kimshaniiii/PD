@@ -492,10 +492,6 @@ body {
     padding: 0;
 }
 
-html:has(.portfolio-page) {
-    overflow: hidden;
-}
-
 .portfolio-page [data-scroll-container] {
     perspective: 1px;
 }
@@ -555,8 +551,10 @@ html:has(.portfolio-page) {
 }
 
 /* Project Pages (Pizzaco, Travellist, etc.) */
-.project-page html {
-    overflow: hidden;
+.project-page {
+    margin: 0;
+    padding: 0;
+    padding-top: 80px;
 }
 
 .project-page [data-scroll-container] {
@@ -591,7 +589,6 @@ html:has(.portfolio-page) {
 
 .loading-page body {
     background: #000000;
-    overflow: hidden;
     font-family: 'Special Gothic Expanded One', Arial, sans-serif;
     height: 100vh;
     display: flex;
@@ -611,6 +608,7 @@ html:has(.portfolio-page) {
     justify-content: center;
     align-items: center;
     z-index: 9999;
+    overflow: hidden;
 }
 
 .logo-container {
