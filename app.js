@@ -30,6 +30,10 @@ app.get('/portfolio', (req, res) => {
     res.render('portfolio', { activePage: 'portfolio' });
 });
 
+app.get('/certificates', (req, res) => {
+    res.render('certificates', { activePage: 'certificates' });
+});
+
 
 
 //react projects

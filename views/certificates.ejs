@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="/app.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/logofinal.png">
+  <title>Certificates</title>
+</head>
+
+<body>
+  <%- include('partials/header') %>
+  <%- include('partials/videobg') %>
+
+  <div class="container" style="margin-top: 150px; margin-bottom: 80px;">
+    
+    <!-- Title -->
+    <h2 class="certificates-title">certificates</h2>
+    
+    <!-- Search and Filter Container -->
+    <div class="search-filter-container">
+      <div class="search-box-wrapper">
+        <input type="text" id="searchInput" class="search-box" placeholder="search certificates...">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+      </div>
+      
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">all</button>
+        <button class="filter-btn" data-filter="foundations">foundations</button>
+        <button class="filter-btn" data-filter="design">design</button>
+        <button class="filter-btn" data-filter="development">development</button>
+        <button class="filter-btn" data-filter="project-management">project management</button>
+      </div>
+    </div>
+
+    <!-- Results Counter -->
+    <div class="results-counter">
+      <span id="resultsCount">18</span> certificates found
+    </div>
+
+    <!-- Certificates Grid -->
+    <div class="certificates-grid" id="certificatesGrid">
+      
+      <!-- Agile Foundations -->
+      <a href="/CertificateOfCompletion_Agile Foundations (2).pdf" target="_blank" class="certificate-card" data-category="foundations project-management" data-name="Agile Foundations">
+        <div class="certificate-inner">
+          <div class="certificate-preview">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo" />
+            <div class="certificate-overlay">
+              <span class="view-btn">view certificate</span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3>Agile Foundations</h3>
+            <span class="certificate-tag">project management</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- React Router v6 -->
+      <a href="/CertificateOfCompletion_Building Modern UIs with React Router v6 (1).pdf" target="_blank" class="certificate-card" data-category="development" data-name="Building Modern UIs with React Router v6">
+        <div class="certificate-inner">
+          <div class="certificate-preview">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo" />
+            <div class="certificate-overlay">
+              <span class="view-btn">view certificate</span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3>React Router v6</h3>
+            <span class="certificate-tag">development</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Bootstrap Templates -->
+      <a href="/CertificateOfCompletion_Create a Quick Clean and Cheap Website with Bootstrap Templates (1).pdf" target="_blank" class="certificate-card" data-category="development design" data-name="Create a Quick Clean and Cheap Website with Bootstrap Templates">
+        <div class="certificate-inner">
+          <div class="certificate-preview">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo" />
+            <div class="certificate-overlay">
+              <span class="view-btn">view certificate</span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3>Bootstrap Templates</h3>
+            <span class="certificate-tag">development</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Accessible Components in Figma -->
+      <a href="/CertificateOfCompletion_Designing Accessible Components In Figma (1).pdf" target="_blank" class="certificate-card" data-category="design" data-name="Designing Accessible Components In Figma">
+        <div class="certificate-inner">
+          <div class="certificate-preview">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo" />
+            <div class="certificate-overlay">
+              <span class="view-btn">view certificate</span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3>Accessible Components in Figma</h3>
+            <span class="certificate-tag">design</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Google Analytics 4 -->
+      <a href="/CertificateOfCompletion_Google Analytics 4 GA4 Essential Training (1).pdf" target="_blank" class="certificate-card" data-category="foundations" data-name="Google Analytics 4 GA4 Essential Training">
+        <div class="certificate-inner">
+          <div class="certificate-preview">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo" />
+            <div class="certificate-overlay">
+              <span class="view-btn">view certificate</span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3>Google Analytics 4</h3>
+            <span class="certificate-tag">foundations</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Hands-On Introduction React -->
+      <a href="/CertificateOfCompletion_HandsOn Introduction React (1).pdf" target="_blank" class="certificate-card" data-category="development" data-name="Hands-On Introduction React">
+        <div class="certificate-inner">
+          <div class="certificate-preview">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo" />
+            <div class="certificate-overlay">
+              <span class="view-btn">view certificate</span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3>React Introduction</h3>
+            <span class="certificate-tag">development</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Illustrator 2023 -->
+      <a href="/CertificateOfCompletion_Illustrator 2023 Quick Start (1).pdf" target="_blank" class="certificate-card" data-category="design" data-name="Illustrator 2023 Quick Start">
+        <div class="certificate-inner">
+          <div class="certificate-preview">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo" />
+            <div class="certificate-overlay">
+              <span class="view-btn">view certificate</span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3>Illustrator 2023</h3>
+            <span class="certificate-tag">design</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- JavaScript Web Form Programming -->
+      <a href="/CertificateOfCompletion_JavaScript Web Form Programming (1).pdf" target="_blank" class="certificate-card" data-category="development" data-name="JavaScript Web Form Programming">
+        <div class="certificate-inner">
+          <div class="certificate-preview">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo" />
+            <div class="certificate-overlay">
+              <span class="view-btn">view certificate</span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3>JavaScript Web Forms</h3>
+            <span class="certificate-tag">development</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Node.js Essential Training -->
+      <a href="/CertificateOfCompletion_Node.js Essential Training (1).pdf" target="_blank" class="certificate-card" data-category="development" data-name="Node.js Essential Training">
+        <div class="certificate-inner">
+          <div class="certificate-preview">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo" />
+            <div class="certificate-overlay">
+              <span class="view-btn">view certificate</span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3>Node.js Essential</h3>
+            <span class="certificate-tag">development</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Photoshop 2021 -->
+      <a href="/CertificateOfCompletion_Photoshop 2021 Quick Start (2).pdf" target="_blank" class="certificate-card" data-category="design" data-name="Photoshop 2021 Quick Start">
+        <div class="certificate-inner">
+          <div class="certificate-preview">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo" />
+            <div class="certificate-overlay">
+              <span class="view-btn">view certificate</span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3>Photoshop 2021</h3>
+            <span class="certificate-tag">design</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- APIs and Web Services -->
+      <a href="/CertificateOfCompletion_Programming Foundations APIs and Web Services 2019 (2).pdf" target="_blank" class="certificate-card" data-category="foundations development" data-name="Programming Foundations APIs and Web Services">
+        <div class="certificate-inner">
+          <div class="certificate-preview">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo" />
+            <div class="certificate-overlay">
+              <span class="view-btn">view certificate</span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3>APIs & Web Services</h3>
+            <span class="certificate-tag">foundations</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project Management Requirements -->
+      <a href="/CertificateOfCompletion_Project Management Foundations Requirements (1).pdf" target="_blank" class="certificate-card" data-category="project-management" data-name="Project Management Foundations Requirements">
+        <div class="certificate-inner">
+          <div class="certificate-preview">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo" />
+            <div class="certificate-overlay">
+              <span class="view-btn">view certificate</span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3>PM Requirements</h3>
+            <span class="certificate-tag">project management</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Software Testing -->
+      <a href="/CertificateOfCompletion_Software Testing Foundations Bug Writing and Management.pdf" target="_blank" class="certificate-card" data-category="foundations" data-name="Software Testing Foundations Bug Writing and Management">
+        <div class="certificate-inner">
+          <div class="certificate-preview">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo" />
+            <div class="certificate-overlay">
+              <span class="view-btn">view certificate</span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3>Software Testing</h3>
+            <span class="certificate-tag">foundations</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- UX Design Creating Personas -->
+      <a href="/CertificateOfCompletion_UX Design 3 Creating Personas (1).pdf" target="_blank" class="certificate-card" data-category="design" data-name="UX Design 3 Creating Personas">
+        <div class="certificate-inner">
+          <div class="certificate-preview">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo" />
+            <div class="certificate-overlay">
+              <span class="view-btn">view certificate</span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3>UX Creating Personas</h3>
+            <span class="certificate-tag">design</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- What Is Scrum -->
+      <a href="/CertificateOfCompletion_What Is Scrum (1).pdf" target="_blank" class="certificate-card" data-category="project-management foundations" data-name="What Is Scrum">
+        <div class="certificate-inner">
+          <div class="certificate-preview">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo" />
+            <div class="certificate-overlay">
+              <span class="view-btn">view certificate</span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3>What Is Scrum</h3>
+            <span class="certificate-tag">project management</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- React Router v6 (duplicate) -->
+      <a href="/CertificateOfCompletion_Building Modern UIs with React Router v6 (2).pdf" target="_blank" class="certificate-card" data-category="development" data-name="Building Modern UIs with React Router v6">
+        <div class="certificate-inner">
+          <div class="certificate-preview">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo" />
+            <div class="certificate-overlay">
+              <span class="view-btn">view certificate</span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3>React Router v6 (Advanced)</h3>
+            <span class="certificate-tag">development</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Agile Foundations (duplicate, keeping for display) -->
+      <a href="/CertificateOfCompletion_Agile Foundations (2).pdf" target="_blank" class="certificate-card" data-category="foundations project-management" data-name="Agile Foundations">
+        <div class="certificate-inner">
+          <div class="certificate-preview">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo" />
+            <div class="certificate-overlay">
+              <span class="view-btn">view certificate</span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3>Agile Advanced</h3>
+            <span class="certificate-tag">foundations</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Photoshop (another version) -->
+      <a href="/CertificateOfCompletion_Photoshop 2021 Quick Start (2).pdf" target="_blank" class="certificate-card" data-category="design" data-name="Photoshop 2021 Quick Start">
+        <div class="certificate-inner">
+          <div class="certificate-preview">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo" />
+            <div class="certificate-overlay">
+              <span class="view-btn">view certificate</span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3>Photoshop Advanced</h3>
+            <span class="certificate-tag">design</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- No Results Message -->
+    <div id="noResults" class="no-results" style="display: none;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+        <line x1="11" y1="8" x2="11" y2="14"></line>
+        <line x1="11" y1="16" x2="11.01" y2="16"></line>
+      </svg>
+      <h3>no certificates found</h3>
+      <p>try adjusting your search or filter</p>
+    </div>
+
+  </div>
+
+  <script>
+    // Certificate data and search/filter logic
+    const searchInput = document.getElementById('searchInput');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const certificateCards = document.querySelectorAll('.certificate-card');
+    const resultsCount = document.getElementById('resultsCount');
+    const noResults = document.getElementById('noResults');
+    const certificatesGrid = document.getElementById('certificatesGrid');
+
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    // Search functionality
+    searchInput.addEventListener('input', (e) => {
+      currentSearch = e.target.value.toLowerCase();
+      filterCertificates();
+    });
+
+    // Filter functionality
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        filterCertificates();
+      });
+    });
+
+    function filterCertificates() {
+      let visibleCount = 0;
+
+      certificateCards.forEach(card => {
+        const category = card.dataset.category;
+        const name = card.dataset.name.toLowerCase();
+        
+        const matchesFilter = currentFilter === 'all' || category.includes(currentFilter);
+        const matchesSearch = name.includes(currentSearch);
+
+        if (matchesFilter && matchesSearch) {
+          card.style.display = 'block';
+          visibleCount++;
+          
+          // Add staggered animation
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, visibleCount * 30);
+        } else {
+          card.style.display = 'none';
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(20px)';
+        }
+      });
+
+      resultsCount.textContent = visibleCount;
+      
+      if (visibleCount === 0) {
+        certificatesGrid.style.display = 'none';
+        noResults.style.display = 'flex';
+      } else {
+        certificatesGrid.style.display = 'grid';
+        noResults.style.display = 'none';
+      }
+    }
+
+    // Initial animation on load
+    window.addEventListener('load', () => {
+      certificateCards.forEach((card, index) => {
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, index * 50);
+      });
+    });
+  </script>
+
+</body>
+</html>
