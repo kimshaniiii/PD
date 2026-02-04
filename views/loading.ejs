@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/logofinal.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+  <title>Loading...</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000000;
+      overflow: hidden;
+      font-family: 'Special Gothic Expanded One', Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loader-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .logo-container {
+      margin-bottom: 60px;
+      animation: scaleIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    @keyframes scaleIn {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .logo-container img {
+      width: 350px;
+      height: auto;
+      filter: drop-shadow(0 0 40px rgba(255, 0, 0, 0.8));
+      animation: logoPulse 2s ease-in-out infinite, logoFloat 4s ease-in-out infinite;
+    }
+
+    @keyframes logoPulse {
+      0%, 100% {
+        filter: drop-shadow(0 0 40px rgba(255, 0, 0, 0.8));
+      }
+      50% {
+        filter: drop-shadow(0 0 80px rgba(255, 0, 0, 1)) drop-shadow(0 0 120px rgba(255, 0, 0, 0.6));
+      }
+    }
+
+    @keyframes logoFloat {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      25% {
+        transform: translateY(-15px) rotate(2deg);
+      }
+      50% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      75% {
+        transform: translateY(-10px) rotate(-2deg);
+      }
+    }
+
+    .loading-text {
+      font-size: 72px;
+      font-weight: 900;
+      letter-spacing: 12px;
+      color: #ff0000;
+      margin-bottom: 20px;
+      animation: fadeInUp 0.6s ease-out 0.3s backwards, textGlow 2s ease-in-out infinite;
+      text-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
+    }
+
+    @keyframes textGlow {
+      0%, 100% {
+        text-shadow: 0 0 30px rgba(255, 0, 0, 0.8), 0 0 50px rgba(255, 0, 0, 0.4);
+      }
+      50% {
+        text-shadow: 0 0 50px rgba(255, 0, 0, 1), 0 0 80px rgba(255, 0, 0, 0.6), 0 0 120px rgba(255, 0, 0, 0.4);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .tagline {
+      font-size: 16px;
+      letter-spacing: 4px;
+      color: rgba(255, 0, 0, 0.7);
+      margin-bottom: 60px;
+      animation: fadeInUp 0.6s ease-out 0.5s backwards;
+      text-transform: uppercase;
+      font-family: Arial, sans-serif;
+    }
+
+    .progress-wrapper {
+      width: 500px;
+      margin-bottom: 30px;
+      animation: fadeInUp 0.6s ease-out 0.7s backwards;
+    }
+
+    .progress-container {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #ff0000 0%, #ff6666 25%, #ff3333 50%, #ff6666 75%, #ff0000 100%);
+      background-size: 300% 100%;
+      border-radius: 10px;
+      width: 0%;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 40px rgba(255, 0, 0, 0.4);
+      animation: shimmer 2s linear infinite, progressPulse 1.5s ease-in-out infinite;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .progress-bar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: progressShine 2s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -300% 0;
+      }
+      100% {
+        background-position: 300% 0;
+      }
+    }
+
+    @keyframes progressPulse {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 40px rgba(255, 0, 0, 0.4);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(255, 0, 0, 1), 0 0 60px rgba(255, 0, 0, 0.6), 0 0 90px rgba(255, 0, 0, 0.3);
+      }
+    }
+
+    @keyframes progressShine {
+      0% {
+        left: -100%;
+      }
+      100% {
+        left: 200%;
+      }
+    }
+
+    .progress-details {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+      color: rgba(255, 0, 0, 0.8);
+      font-size: 14px;
+      letter-spacing: 3px;
+      font-family: Arial, sans-serif;
+    }
+
+    .percentage {
+      font-weight: 700;
+    }
+2);
+      border-radius: 50%;
+      animation: expand 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+    }
+
+    .circle:nth-child(1) {
+      width: 300px;
+      height: 300px;
+      animation-delay: 0s;
+    }
+
+    .circle:nth-child(2) {
+      width: 500px;
+      height: 500px;
+      animation-delay: 1.5s;
+    }
+
+    .circle:nth-child(3) {
+      width: 700px;
+      height: 700px;
+      animation-delay: 3s;
+    }
+
+    @keyframes expand {
+      0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 0.8;
+        border-width: 3px;
+      }
+      50% {
+        opacity: 0.4;
+        border-width: 2px;
+      }
+      100% {
+        transform: scale(1.8) rotate(180deg);
+        opacity: 0;
+        border-width: 1px;
+      }
+    }
+
+    /* Particle effects */
+    .particle {
+      position: absolute;
+      background: #ff0000;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: particleFloat 3s ease-in-out infinite;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+    }
+
+    .particle:nth-child(4) {
+      width: 6px;
+      height: 6px;
+      top: 20%;
+      left: 15%;
+      animation-delay: 0s;
+      animation-duration: 4s;
+    }
+
+    .particle:nth-child(5) {
+      width: 8px;
+      height: 8px;
+      top: 70%;
+      left: 80%;
+      animation-delay: 1s;
+      animation-duration: 5s;
+    }
+
+    .particle:nth-child(6) {
+      width: 5px;
+      height: 5px;
+      top: 30%;
+      left: 85%;
+      animation-delay: 2s;
+      animation-duration: 3.5s;
+    }
+
+    .particle:nth-child(7) {
+      width: 7px;
+      height: 7px;
+      top: 80%;
+      left: 20%;
+      animation-delay: 0.5s;
+      animation-duration: 4.5s;
+    }
+
+    .particle:nth-child(8) {
+      width: 6px;
+      height: 6px;
+      top: 50%;
+      left: 10%;
+      animation-delay: 1.5s;
+      animation-duration: 4s;
+    }
+
+    @keyframes particleFloat {
+      0%, 100% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 0.3;
+      }
+      25% {
+        transform: translateY(-50px) translateX(30px) scale(1.2);
+        opacity: 0.8;
+      }
+      50% {
+        transform: translateY(-20px) translateX(-20px) scale(0.9);
+        opacity: 0.6;
+      }4);
+      animation: fadeInUp 0.6s ease-out 0.9s backwards, cornerGlow 3s ease-in-out infinite;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+
+    @keyframes cornerGlow {
+      0%, 100% {
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        opacity: 0.4;
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+        opacity: 0.8;
+      }
+        transform: translateY(-70px) translateX(10px) scale(1.1);
+        opacity: 0.7
+
+    @keyframes expand {
+      0% {
+        transform: scale(0);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    /* Fade out */
+    .fade-out {
+      animation: fadeOutScreen 0.8s forwards;
+    }
+
+    @keyframes fadeOutScreen {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    /* Corner decorations */
+    .corner-line {
+      position: absolute;
+      background: rgba(255, 0, 0, 0.3);
+      animation: fadeInUp 0.6s ease-out 0.9s backwards;
+    }
+
+    .corner-line.top-left {
+      top: 30px;
+      left: 30px;
+      width: 60px;
+      height: 2px;
+    }
+
+    .corner-line.top-left-vertical {
+      top: 30px;
+      left: 30px;
+      width: 2px;
+      height: 60px;
+    }
+
+    .corner-line.top-right {
+      top: 30px;
+      right: 30px;
+      width: 60px;
+      height: 2px;
+    }
+
+    .corner-line.top-right-vertical {
+      top: 30px;
+      right: 30px;
+      width: 2px;
+      height: 60px;
+    }
+
+    .corner-line.bottom-left {
+      bottom: 30px;
+      left: 30px;
+      width: 60px;
+      heiFloating particles -->
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+
+    <!-- ght: 2px;
+    }
+
+    .corner-line.bottom-left-vertical {
+      bottom: 30px;
+      left: 30px;
+      width: 2px;
+      height: 60px;
+    }
+
+    .corner-line.bottom-right {
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 2px;
+    }
+
+    .corner-line.bottom-right-vertical {
+      bottom: 30px;
+      right: 30px;
+      width: 2px;
+      height: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .loading-text {
+        font-size: 48px;
+        letter-spacing: 8px;
+      }
+      
+      .progress-wrapper {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="loader-wrapper" id="loader">
+    <!-- Expanding circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <!-- Corner decorations -->
+    <div class="corner-line top-left"></div>
+    <div class="corner-line top-left-vertical"></div>
+    <div class="corner-line top-right"></div>
+    <div class="corner-line top-right-vertical"></div>
+    <div class="corner-line bottom-left"></div>
+    <div class="corner-line bottom-left-vertical"></div>
+    <div class="corner-line bottom-right"></div>
+    <div class="corner-line bottom-right-vertical"></div>
+
+    <!-- Logo -->
+    <div class="logo-container">
+      <img src="/logofinal.png" alt="Logo">
+    </div>
+
+    <!-- Loading text -->
+    <div class="loading-text">LOADING</div>
+    <div class="tagline">Preparing Your Experience</div>
+
+    <!-- Progress bar -->
+    <div class="progress-wrapper">
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <div class="progress-details">
+        <span class="percentage" id="percentage">0%</span>
+        <span class="loading-status" id="status">Initializing...</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const progressBar = document.getElementById('progressBar');
+    const percentage = document.getElementById('percentage');
+    const status = document.getElementById('status');
+    const loader = document.getElementById('loader');
+
+    let progress = 0;
+    const statuses = [
+      'Initializing...',
+      'Loading Assets...',
+      'Preparing Content...',
+      'Almost Ready...',
+      'Complete!'
+    ];
+
+    const interval = setInterval(() => {
+      progress += Math.random() * 10;
+      
+      if (progress >= 100) {
+        progress = 100;
+        clearInterval(interval);
+        
+        setTimeout(() => {
+          loader.classList.add('fade-out');
+          setTimeout(() => {
+            window.location.href = '/home';
+          }, 800);
+        }, 500);
+      }
+
+      progressBar.style.width = progress + '%';
+      percentage.textContent = Math.floor(progress) + '%';
+
+      // Update status based on progress
+      if (progress < 25) {
+        status.textContent = statuses[0];
+      } else if (progress < 50) {
+        status.textContent = statuses[1];
+      } else if (progress < 75) {
+        status.textContent = statuses[2];
+      } else if (progress < 100) {
+        status.textContent = statuses[3];
+      } else {
+        status.textContent = statuses[4];
+      }
+    }, 150);
+  </script>
+</body>
+</html>

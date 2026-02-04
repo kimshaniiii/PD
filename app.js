@@ -11,6 +11,10 @@ app.use(express.urlencoded({ extended: true }));
 // app.js
 
 app.get('/', (req, res) => {
+    res.render('loading');
+});
+
+app.get('/home', (req, res) => {
     res.render('index', { activePage: 'home' }); 
 });
 
